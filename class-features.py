@@ -29,6 +29,5 @@ class Polynomial:
 p1 = Polynomial(1, 2, 3)    # x2 + 2x + 3
 p2 = Polynomial(3, 4, 3)    # 3x2 + 2x + 3
 
-print(sys.path)
 
 
