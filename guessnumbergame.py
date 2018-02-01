@@ -22,7 +22,7 @@ def main():
         userGuess = int(input("Your Guess: "))
 
         if userGuess == randomNumber:
-            print("Congratulations! It is ", randomNumber)
+            print("Congratulations! It is {}".format(randomNumber))
             break
         elif userGuess > randomNumber:
             print("Try again. Guess Lower..")
@@ -30,7 +30,7 @@ def main():
             print("Try again. Guess Higher..")
 
     while not newGamePrompt:
-        newgame = input("Do you want to play again? Y/N")
+        newgame = str(input("Do you want to play again? Y/N"))
 
         if newgame == 'Y':
             new_game()
@@ -39,7 +39,7 @@ def main():
             print("See you later!")
             newGamePrompt = True
         else:
-            print("Answer either Y for 'yes' or answer N for 'no'... ")
+            print("Answer either n for 'yes' or answer y for 'no'... ")
 
 if __name__ == '__main__':
     main()

@@ -19,9 +19,9 @@
 import regex as re
 import numpy as np
 import pandas as pd
-import mock
+import pytest
 import importlib as implib
-from ..py_packege import main
+from ..py_package import main
 
 import random.randint
 from random import randint as random_number
@@ -54,7 +54,7 @@ __all__ = ['randint']
 # --------------------------------------------------------------------
 
 
-# The keyword argument end can be used to avoid the newline after the output,
+# The keyword argument 'end' can be used to avoid the newline after the output,
 # or end the output with a different string.
 print('Hello World')
 print('Enter number', end=" ")
@@ -72,26 +72,27 @@ print('Enter number', end=" ")
 # You do not need to declare variables before using them, or declare their type. 
 # Every variable in Python is an object.
 
-my_int = 7								# integer
-my_float = 7.0							# float
+my_int = 7									# integer
+my_float = 7.0								# float
 my_float = float(7)
-my_str = 'Hello'						# string
-my_list = ['a', 'b', 'c']				# list
-my_set = 7			# integer
+my_str = 'Hello'							# string    	""
+my_list = ['a', 'b', 'c']					# list 			[]
 
+# Data Structures
+my_set = 7, 'hey'							# set       	{}
+my_tuple = ('1', '2', '3')					# tuple 		()
+my_dict = {key:"value", key2:"value2"}		# dictionary 	{}
 
 
 #
 # Format Conversion
 #
 
-value = '100'
-
 int(value)
 float(value)
 str(value)
-repr(value)								# Interpreter readable
-list(range(x,y))						# Takes iterable
+repr(value)									# Interpreter readable
+list(range(x,y))							# Takes iterable
 
 
 
@@ -139,13 +140,11 @@ mystring.split(' ')				# Converts string to list of strings based on condition
 name = 'John'
 string_f = "Hello, %s!" % name
 
-%s 			# string (or any object with string representation)
-%d 			# integers
-%f 			# floating point numbers
-
+%s 								# string (or any object with string representation)
+%d 								# integers
+%f 								# floating point numbers
 %.<number of digits>f 			# set fixed amount of digits
-
-%x/%X 		# integers in hex representation (lowercase / uppercase)
+%x/%X 							# integers in hex representation (lowercase / uppercase)
 
 
 
@@ -159,13 +158,15 @@ string_f = "Hello, %s!" % name
 
 len()
 mylist.append()					# Append value to the end of the list
-mylist.extend(iterable)			# Extend the list by appending all items from iterable
 mylist.insert(0, item)			# Insert an item at given (position, item)
-mylist.remove(item)				# Remove the first item in the list
 mylist.pop(0)					# Remove the item at given position
 								# With no index specified, remove the last item
+mylist.remove(item)				# Remove the first item in the list
+
+mylist.extend(iterable)			# Extend the list by appending all items from iterable
 
 mylist.clear()					# Remove all items from the list
+
 mylist.index(item)				# Return zero based index of first item found
 								# [item, start, end]
 
@@ -200,7 +201,7 @@ for x, y in enumerate(sequence):
 	print(x, y)
 
 
-# Looping over multiple sequences
+# Looping vertically over multiple sequences
 
 for q, a in zip(questions, answers):
 	print('Question: {0} /n Answer: {1}'.format{q,a})
